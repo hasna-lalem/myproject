@@ -10,3 +10,80 @@ form.addEventListener('submit' ,e =>{
     checkInputs();
     
 })
+
+function checkInputs() {
+    //trim to remove the white spaces
+    const usernameValue = username.value.trim();
+    const emailValue=email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+
+    if(usernameValue === ''){
+        setErrorFor(username,'Username cannot be blank')
+    }else{
+        setSuccessFor(username);
+    }
+
+    if(emailValue === ''){
+        setErrorFor(email,'email cannot be blank')
+    }else{
+        setSuccessFor(email);
+    }
+
+    if(passwordValue=== ''){
+        setErrorFor(password,'Password cannnot be blank');
+    }else{
+        setSuccessFor(password);
+    }
+
+    
+    if(password2Value === ''){
+        setErrorFor(password2,'Password2 cannnot be blank');
+    }else if(passwordValue !== password2Value){
+        setErrorFor(password2,'Passwords does not match');
+    }else{
+        setSuccessFor(password2);
+    }
+
+}
+
+function setErrorFor(input,message){
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className='form-control error';
+    small.innerText = message;
+}
+
+function setSuccessFor(input){
+    const formControl = input.parentElement;
+    formControl.className = "form-control success";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

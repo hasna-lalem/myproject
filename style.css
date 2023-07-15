@@ -7,7 +7,7 @@ body{
 .form{
     padding: 30px 40px;
 }
-.form-control{
+.form-control {
     margin-bottom: 10px;
     padding-bottom: 20px;
     position: relative;
@@ -33,7 +33,7 @@ body{
     border-color: #777;
 }
 
-.form-controle.success
+.form-control.success
 i.fa-check-circle {
     color: #2ecc71;
     visibility: visible;
